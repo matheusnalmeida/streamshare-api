@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamShare.API", "StreamShare.API\StreamShare.API.csproj", "{9EFE4BA6-6163-4643-B4BB-C91BD8597EA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamShare.API", "StreamShare.API\StreamShare.API.csproj", "{9EFE4BA6-6163-4643-B4BB-C91BD8597EA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamShare.Domain", "StreamShare.Domain\StreamShare.Domain.csproj", "{C3B14C5F-2623-45C7-A8DE-C47A90D9E552}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamShare.Infrastructure", "StreamShare.Infrastructure\StreamShare.Infrastructure.csproj", "{40860C9E-B747-49C9-91C8-62D3EEEF57A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamShare.Application", "StreamShare.Application\StreamShare.Application.csproj", "{B5054667-CD21-46CE-9850-B4DD08EEB6D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{9EFE4BA6-6163-4643-B4BB-C91BD8597EA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EFE4BA6-6163-4643-B4BB-C91BD8597EA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EFE4BA6-6163-4643-B4BB-C91BD8597EA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3B14C5F-2623-45C7-A8DE-C47A90D9E552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3B14C5F-2623-45C7-A8DE-C47A90D9E552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3B14C5F-2623-45C7-A8DE-C47A90D9E552}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3B14C5F-2623-45C7-A8DE-C47A90D9E552}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40860C9E-B747-49C9-91C8-62D3EEEF57A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40860C9E-B747-49C9-91C8-62D3EEEF57A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40860C9E-B747-49C9-91C8-62D3EEEF57A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40860C9E-B747-49C9-91C8-62D3EEEF57A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5054667-CD21-46CE-9850-B4DD08EEB6D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5054667-CD21-46CE-9850-B4DD08EEB6D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5054667-CD21-46CE-9850-B4DD08EEB6D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5054667-CD21-46CE-9850-B4DD08EEB6D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
