@@ -1,1 +1,1 @@
-# streamshare-backend
+# streamshare-api
