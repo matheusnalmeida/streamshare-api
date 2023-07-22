@@ -1,6 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using StreamShare.Domain.Queries.Requests;
+using StreamShare.Domain.Queries.Responses;
 
 namespace StreamShare.API.Controllers
 {
@@ -16,6 +17,7 @@ namespace StreamShare.API.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
+        [ProducesResponseType(typeof(GetAllWeatherForecastResponse), StatusCodes.Status200OK)]
         public async Task<IActionResult>  Get()
         {
             var response = await _mediator.Send(new GetAllWeatherForecastRequest());
