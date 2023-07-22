@@ -1,5 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StreamShare.Infrastructure.Database.EFContext;
 
 namespace StreamShare.Infrastructure.Extensions
 {
@@ -7,15 +9,15 @@ namespace StreamShare.Infrastructure.Extensions
     {
         public static void ConfigureInfraStructure(this IServiceCollection services, IConfiguration configuration)
         {
-            // TODO CONTEXT EF
-            //services.AddDbContext<DbContext>(options =>
-            //{
-            //    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
-            //});
-            //
-            //services.AddScoped<DbContext>(option => {
-            //    return option.GetService<DbContext>();
-            //});
+            services.AddDbContext<StreamShareContext>(options =>
+                                   options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
+        }
+
+        public static void ConfigureDB(this IServiceProvider serviceProvider) {
+            using var scope = serviceProvider.CreateScope();
+            
+            var dbContext = scope.ServiceProvider.GetRequiredService<StreamShareContext>();
+            dbContext.Database.Migrate();
         }
     }
 }
