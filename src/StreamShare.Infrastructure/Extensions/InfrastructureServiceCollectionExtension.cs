@@ -14,8 +14,7 @@ namespace StreamShare.Infrastructure.Extensions
         }
 
         public static void ConfigureDB(this IServiceProvider serviceProvider) {
-            using var scope = serviceProvider.CreateScope();
-            
+            using var scope = serviceProvider.CreateScope();            
             var dbContext = scope.ServiceProvider.GetRequiredService<StreamShareContext>();
             dbContext.Database.Migrate();
         }
