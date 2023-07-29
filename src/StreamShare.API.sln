@@ -5,11 +5,17 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamShare.API", "StreamShare.API\StreamShare.API.csproj", "{9EFE4BA6-6163-4643-B4BB-C91BD8597EA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamShare.Domain", "StreamShare.Domain\StreamShare.Domain.csproj", "{C3B14C5F-2623-45C7-A8DE-C47A90D9E552}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamShare.Domain", "StreamShare.Domain\StreamShare.Domain.csproj", "{C3B14C5F-2623-45C7-A8DE-C47A90D9E552}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamShare.Infrastructure", "StreamShare.Infrastructure\StreamShare.Infrastructure.csproj", "{40860C9E-B747-49C9-91C8-62D3EEEF57A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamShare.Infrastructure", "StreamShare.Infrastructure\StreamShare.Infrastructure.csproj", "{40860C9E-B747-49C9-91C8-62D3EEEF57A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamShare.Application", "StreamShare.Application\StreamShare.Application.csproj", "{B5054667-CD21-46CE-9850-B4DD08EEB6D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamShare.Application", "StreamShare.Application\StreamShare.Application.csproj", "{B5054667-CD21-46CE-9850-B4DD08EEB6D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3FDAB43A-9482-41E4-9A17-DC69BF5B1C88}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamShare.Test.Unit", "..\tests\StreamShare.Test.Unit\StreamShare.Test.Unit.csproj", "{A59A1447-ED37-469D-A3CC-DF26B9FD70A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamShare.Test.Integration", "..\tests\StreamShare.Test.Integration\StreamShare.Test.Integration.csproj", "{33821334-330A-4679-AF10-56EF8F8EDB34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +39,21 @@ Global
 		{B5054667-CD21-46CE-9850-B4DD08EEB6D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5054667-CD21-46CE-9850-B4DD08EEB6D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5054667-CD21-46CE-9850-B4DD08EEB6D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A59A1447-ED37-469D-A3CC-DF26B9FD70A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A59A1447-ED37-469D-A3CC-DF26B9FD70A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A59A1447-ED37-469D-A3CC-DF26B9FD70A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A59A1447-ED37-469D-A3CC-DF26B9FD70A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33821334-330A-4679-AF10-56EF8F8EDB34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33821334-330A-4679-AF10-56EF8F8EDB34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33821334-330A-4679-AF10-56EF8F8EDB34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33821334-330A-4679-AF10-56EF8F8EDB34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A59A1447-ED37-469D-A3CC-DF26B9FD70A7} = {3FDAB43A-9482-41E4-9A17-DC69BF5B1C88}
+		{33821334-330A-4679-AF10-56EF8F8EDB34} = {3FDAB43A-9482-41E4-9A17-DC69BF5B1C88}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D9211766-60A4-4BC5-9E55-723997CBC04C}
