@@ -43,7 +43,7 @@ namespace StreamShare.Test.Integration
         }
 
         [Fact]
-        public void CreateLocationTest()
+        public void CreateLocationIfNotExistsTest()
         {
             dynamic endpoints = new Endpoints(_gerenciaNetFixture.Credentials);
 
@@ -68,6 +68,45 @@ namespace StreamShare.Test.Integration
                 !string.IsNullOrEmpty(locationDTO.Location));
         }
 
+        [Fact]
+        public void CreateChargeWithTxidIfNotExistsTest()
+        {
+            dynamic endpoints = new Endpoints(_gerenciaNetFixture.Credentials);
+            var txidTest = "18bf24254dca48eb8775f74350f371d2";
+
+            GetChargeResponseDTO chargeResponseDTO = GetCreatedChargeByTxid(endpoints, txidTest);
+            if (string.IsNullOrEmpty(chargeResponseDTO.Txid)) 
+            {
+                var param = new
+                {
+                    txid = txidTest
+                };
+
+                var body = new
+                {
+                    calendario = new
+                    {
+                        expiracao = 3600
+                    },
+                    devedor = new
+                    {
+                        cpf = "58590107027",
+                        nome = "Matheus Nunes"
+                    },
+                    valor = new
+                    {
+                        original = "0.01"
+                    },
+                    chave = "44e6de69-6e87-4fad-84f2-edc3f2aaa743",
+                    solicitacaoPagador = "Informe o número ou identificador do pedido."
+                };
+                var responseCreateCharge = endpoints.PixCreateCharge(param, body) as string;
+                chargeResponseDTO = JsonConvert.DeserializeObject<GetChargeResponseDTO>(responseCreateCharge);
+            }
+            Assert.True(chargeResponseDTO != null && !string.IsNullOrEmpty(chargeResponseDTO.Txid)); 
+        }
+
+
         private static GetLocationResponseDTO GetCreatedLocations(dynamic endpoints)
         {
             var param = new
@@ -75,10 +114,19 @@ namespace StreamShare.Test.Integration
                 inicio = "2023-07-29T00:00:00.000Z",
                 fim = "2023-07-29T23:59:59.000Z",
             };
-
             var responseListLocation = endpoints.PixListLocation(param) as string;
             var getLocationDTO = JsonConvert.DeserializeObject<GetLocationResponseDTO>(responseListLocation);
             return getLocationDTO;
+        }
+
+        private static GetChargeResponseDTO GetCreatedChargeByTxid(dynamic endpoints, string txid) {
+            var param = new
+            {
+                txid,
+            };
+            var responseCharge = endpoints.PixDetailCharge(param) as string;
+            var responseChargeDTO = JsonConvert.DeserializeObject<GetChargeResponseDTO>(responseCharge);
+            return responseChargeDTO;
         }
     }
 }

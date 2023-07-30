@@ -31,6 +31,9 @@
     <None Update="Credentials\homologacao-477522-StreamShare.API.Homologation.p12">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Credentials\producao-477522-StreamShare.API.Production.Local.p12">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
