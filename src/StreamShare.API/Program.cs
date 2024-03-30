@@ -1,13 +1,19 @@
+using StreamShare.Application.Extensions;
+using StreamShare.Infrastructure.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.ConfigureInfraStructure(builder.Configuration);
+builder.Services.ConfigureApplication(builder.Configuration);
 
 var app = builder.Build();
+
+app.Services.ConfigureDB();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

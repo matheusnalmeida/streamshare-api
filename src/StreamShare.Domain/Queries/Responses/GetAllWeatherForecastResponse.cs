@@ -1,6 +1,6 @@
-namespace StreamShare.API
+﻿namespace StreamShare.Domain.Queries.Responses
 {
-    public class WeatherForecast
+    public class GetAllWeatherForecastResponse
     {
         public DateOnly Date { get; set; }
 
@@ -8,6 +8,6 @@ namespace StreamShare.API
 
         public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 
-        public string? Summary { get; set; }
+        public string Summary { get; set; }
     }
 }
